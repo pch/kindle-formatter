@@ -44,12 +44,12 @@ export const BooksApp = () => {
 
         <HighlightsArea>
           <AreaTitle>Highlights and Notes</AreaTitle>
-          <Highlights book={book} />
+          <Highlights data={book} />
         </HighlightsArea>
 
         <ExportArea>
           <AreaTitle>Plain text</AreaTitle>
-          <Export book={book} />
+          <Export data={book} />
         </ExportArea>
       </BookAppWrapper>
     </Dropzone>

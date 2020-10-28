@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const HighlightsWrapper = styled.div`
@@ -33,7 +33,11 @@ const HighlightMeta = styled.div`
   }
 `;
 
-export const Highlights = ({ book }) => {
+export const Highlights = ({ data }) => {
+  const [book, setBook] = useState(data);
+
+  useEffect(() => setBook(data), [data]);
+
   const bookNotes = book.sections.map((section, i) => {
     const highlights = section.highlights.map((highlight, i) => {
       return (

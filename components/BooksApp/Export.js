@@ -20,12 +20,12 @@ const TextArea = styled.textarea`
   line-height: var(--line-height);
 `;
 
-export const Export = ({ book }) => {
+export const Export = ({ data }) => {
   const [markdown, setMarkdown] = useState("");
 
   useEffect(() => {
-    setMarkdown(bookToMarkdown(book));
-  }, [book]);
+    setMarkdown(bookToMarkdown(data));
+  }, [data]);
 
   return (
     <ExportWrapper>
