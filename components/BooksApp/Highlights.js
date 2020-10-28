@@ -45,8 +45,8 @@ export const Highlights = ({ data }) => {
           <HighlightContent>{highlight.content}</HighlightContent>
           <HighlightMeta>
             <span>{highlight.type}</span>
-            <span>Page: {highlight.page}</span>
-            <span>Location: {highlight.location}</span>
+            {highlight.page && <span>Page: {highlight.page}</span>}
+            {highlight.location && <span>Location: {highlight.location}</span>}
           </HighlightMeta>
         </Highlight>
       );
