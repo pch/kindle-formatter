@@ -1,0 +1,27 @@
+version: "3.4"
+
+x-app: &app
+  image: kindle-formatter:1.0.0
+  build:
+    context: .
+  volumes:
+    - .:/usr/src/app:cached
+    - node_modules:/usr/src/app/node_modules
+  stdin_open: true
+  tty: true
+
+services:
+  nextjs:
+    <<: *app
+    ports:
+      - 3000:3000
+
+  bash:
+    <<: *app
+    entrypoint: ""
+    command: /bin/bash
+
+volumes:
+  db_data:
+  gem_cache:
+  node_modules:

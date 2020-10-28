@@ -1,0 +1,5 @@
+#!/bin/bash
+# Run commands in the main container
+set -e
+
+docker-compose run --rm bash $*
