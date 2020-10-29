@@ -38,7 +38,7 @@ export const Instructions = ({ onFile }) => {
               Right-click on the book you want to export, click "Go to Notebook"
             </li>
             <li>Click "Export" in the right-hand upper corner</li>
-            <li>Save file on your disk</li>
+            <li>Save file to your disk</li>
             <li>
               Drag the html file onto this window or use the button below.
             </li>

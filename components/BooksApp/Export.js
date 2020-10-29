@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 import { ExportArea, AreaTitle, AreaContent } from "./BookAppStyles";
 import { formatOutput } from "lib/formatter";
-import { TEMPLATES } from "templates";
 
 const TextArea = styled.textarea`
   display: block;
@@ -52,30 +51,17 @@ const PresetButton = styled.button`
 `;
 
 const PLACEHOLDER = "Exportable plain-text notes will appear in this column";
-const DEFAULT_PRESET = "roam";
 
-export const Export = ({ book }) => {
-  const [preset, setPreset] = useState(DEFAULT_PRESET);
-  const output = book.empty ? PLACEHOLDER : formatOutput(book, preset);
+export const Export = ({ book, selectedPreset, templates, onPresetChange }) => {
+  const output = book.empty
+    ? PLACEHOLDER
+    : formatOutput(book, templates[selectedPreset]);
 
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    setPreset(localStorage.getItem("KINDLE_EXPORT_PRESET") || DEFAULT_PRESET);
-  }, []);
-
-  console.log(preset);
-
-  const handlePresetChange = (newPreset) => {
-    setPreset(newPreset);
-    localStorage.setItem("KINDLE_EXPORT_PRESET", newPreset);
-  };
-
-  const builtinPresets = Object.keys(TEMPLATES).map((tpl) => {
+  const presets = Object.keys(templates).map((tpl) => {
     return (
       <PresetButton
-        active={tpl === preset}
-        onClick={() => handlePresetChange(tpl)}
+        active={tpl === selectedPreset}
+        onClick={() => onPresetChange(tpl)}
         key={tpl}
       >
         {tpl}
@@ -87,7 +73,7 @@ export const Export = ({ book }) => {
     <ExportArea>
       <AreaTitle>
         Plain text
-        <PresetsWrapper>Preset: {builtinPresets}</PresetsWrapper>
+        <PresetsWrapper>Preset: {presets}</PresetsWrapper>
       </AreaTitle>
       <AreaContent>
         <TextArea readOnly value={output}></TextArea>

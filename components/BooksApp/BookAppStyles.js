@@ -9,12 +9,16 @@ export const BookAppWrapper = styled.div`
   margin: 0 auto;
 
   display: grid;
-  grid-template-areas: "instructions highlights export";
-  grid-template-columns: minmax(150px, 300px) minmax(200px, 1fr) minmax(
+  grid-template-areas:
+    "instructions highlights export"
+    "preset highlights export";
+
+  grid-template-columns: minmax(150px, 400px) minmax(200px, 1fr) minmax(
       300px,
       1fr
     );
-  grid-template-rows: 1fr;
+
+  grid-template-rows: 1fr 1fr;
 
   font-size: var(--text-xs);
 `;
@@ -41,6 +45,12 @@ export const HighlightsArea = styled(Area)`
 
 export const ExportArea = styled(Area)`
   grid-area: export;
+`;
+
+export const CustomPresetArea = styled(Area)`
+  grid-area: preset;
+  border-right: 1px var(--border-color) solid;
+  border-top: 1px var(--border-color) solid;
 `;
 
 export const AreaTitle = styled.div`
