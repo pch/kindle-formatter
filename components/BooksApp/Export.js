@@ -18,8 +18,10 @@ const TextArea = styled.textarea`
   font-family: var(--font-family-monospace);
 `;
 
+const PLACEHOLDER = "Exportable plain-text notes will appear in this column";
+
 export const Export = ({ book }) => {
-  const markdown = bookToMarkdown(book);
+  const markdown = book.empty ? PLACEHOLDER : bookToMarkdown(book);
 
   return (
     <ExportArea>

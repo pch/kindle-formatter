@@ -46,6 +46,8 @@ const HighlightMeta = styled.div`
   }
 `;
 
+const Placeholder = styled.div``;
+
 export const Highlights = ({ book }) => {
   const bookNotes = book.sections.map((section, i) => {
     const highlights = section.highlights.map((highlight, i) => {
@@ -71,9 +73,13 @@ export const Highlights = ({ book }) => {
 
   return (
     <HighlightsArea>
-      <AreaTitle>Plain text</AreaTitle>
+      <AreaTitle>Your Highlights and Notes</AreaTitle>
       <AreaContent>
         <HighlightsWrapper>
+          {book.empty && (
+            <Placeholder>Drop a Kindle-exported HTML file here</Placeholder>
+          )}
+
           <BookHeading>
             <BookTitle>{book.title}</BookTitle>
             <BookAuthors>{book.authors}</BookAuthors>

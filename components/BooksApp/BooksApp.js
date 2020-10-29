@@ -6,7 +6,7 @@ import Dropzone from "./Dropzone";
 import { BookAppWrapper } from "./BookAppStyles";
 import { parseHighlights } from "lib/services";
 
-const emptyBook = { title: "", authors: "", sections: [] };
+const emptyBook = { title: "", authors: "", sections: [], empty: true };
 
 export const BooksApp = () => {
   const [book, setBook] = useState(emptyBook);
