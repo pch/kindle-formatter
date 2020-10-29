@@ -13,9 +13,9 @@ export const BookAppWrapper = styled.div`
     "instructions highlights export"
     "preset highlights export";
 
-  grid-template-columns: minmax(150px, 400px) minmax(200px, auto) minmax(
+  grid-template-columns: minmax(150px, 400px) minmax(200px, 1f) minmax(
       300px,
-      auto
+      1fr
     );
 
   grid-template-rows: 1fr 1fr;
