@@ -61,6 +61,7 @@ export const GlobalStyles = createGlobalStyle`
 
     --background-color: white;
     --font-family: "Inter", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-family-monospace: 'Fira Mono', 'Courier New', Courier, monospace;
     --text-color: var(--grey-5);
     --light-text-color: var(--light-grey-5);
     --link-color: var(--indigo-1);

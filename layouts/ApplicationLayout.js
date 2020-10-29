@@ -11,7 +11,7 @@ export default function ApplicationLayout({ children }) {
         <meta property="og:type" content="website" />
 
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Fira+Mono&family=Inter:wght@400;600&display=swap"
           rel="stylesheet"
         />
       </Head>

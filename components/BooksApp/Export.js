@@ -15,6 +15,7 @@ const TextArea = styled.textarea`
   line-height: var(--line-height);
   border: none;
   outline: none;
+  font-family: var(--font-family-monospace);
 `;
 
 export const Export = ({ book }) => {
