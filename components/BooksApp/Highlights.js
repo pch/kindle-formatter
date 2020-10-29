@@ -53,7 +53,7 @@ export const Highlights = ({ book }) => {
     const highlights = section.highlights.map((highlight, i) => {
       return (
         <Highlight key={`hl-${i}`}>
-          <HighlightContent>{highlight.content}</HighlightContent>
+          <HighlightContent>{highlight.highlight}</HighlightContent>
           <HighlightMeta>
             <span>{highlight.type}</span>
             {highlight.page && <span>Page: {highlight.page}</span>}
@@ -65,7 +65,7 @@ export const Highlights = ({ book }) => {
 
     return (
       <Section key={`s-${i}`}>
-        <SectionTitle>{section.title}</SectionTitle>
+        <SectionTitle>{section.sectionTitle}</SectionTitle>
         {highlights}
       </Section>
     );

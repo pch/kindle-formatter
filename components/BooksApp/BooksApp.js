@@ -4,7 +4,7 @@ import { Highlights } from "./Highlights";
 import { Export } from "./Export";
 import Dropzone from "./Dropzone";
 import { BookAppWrapper } from "./BookAppStyles";
-import { parseHighlights } from "lib/services";
+import { parseHighlights } from "lib/parser";
 
 const emptyBook = { title: "", authors: "", sections: [], empty: true };
 

@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "eslint-loader": "^4.0.2",
+    "mustache": "^4.0.1",
     "next": "^10",
     "react": "^17",
     "react-dom": "^17",

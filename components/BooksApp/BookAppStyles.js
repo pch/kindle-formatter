@@ -50,6 +50,8 @@ export const AreaTitle = styled.div`
   padding: var(--spacing-md) var(--spacing-lg);
   background: var(--light-indigo-1);
   z-index: 100;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const AreaContent = styled.div`
