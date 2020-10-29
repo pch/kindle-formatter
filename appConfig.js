@@ -6,7 +6,7 @@ export const APP_CONFIG = {
 
 export const breakpoints = {
   breakS: `(max-width: 576px)`,
-  breakM: `(max-width: 950px)`,
+  breakM: `(max-width: 850px)`,
   breakL: `(max-width: 1020px)`,
   breakXL: `(max-width: 1440px)`,
 };
