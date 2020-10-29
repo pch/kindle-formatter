@@ -11,6 +11,7 @@ const TextArea = styled.textarea`
   top: 0;
   bottom: 0;
   width: 100%;
+  height: 100%;
   padding: var(--spacing-lg);
   line-height: var(--line-height);
   border: none;
