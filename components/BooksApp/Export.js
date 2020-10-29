@@ -1,35 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
+import { ExportArea, AreaTitle, AreaContent } from "./BookAppStyles";
 import { bookToMarkdown } from "lib/services";
-
-const ExportWrapper = styled.div`
-  position: relative;
-  height: 80vh;
-`;
 
 const TextArea = styled.textarea`
   display: block;
   position: absolute;
-  left: var(--spacing-lg);
-  right: var(--spacing-lg);
-  top: var(--spacing-lg);
-  bottom: var(--spacing-lg);
-  width: calc(100% - var(--spacing-lg) - var(--spacing-lg));
-  border: 1px var(--border-color) solid;
-  padding: var(--spacing-md);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  padding: var(--spacing-lg);
   line-height: var(--line-height);
+  border: none;
+  outline: none;
 `;
 
-export const Export = ({ data }) => {
-  const [markdown, setMarkdown] = useState("");
-
-  useEffect(() => {
-    setMarkdown(bookToMarkdown(data));
-  }, [data]);
+export const Export = ({ book }) => {
+  const markdown = bookToMarkdown(book);
 
   return (
-    <ExportWrapper>
-      <TextArea defaultValue={markdown}></TextArea>
-    </ExportWrapper>
+    <ExportArea>
+      <AreaTitle>Plain text</AreaTitle>
+      <AreaContent>
+        <TextArea readOnly value={markdown}></TextArea>
+      </AreaContent>
+    </ExportArea>
   );
 };

@@ -1,25 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
+import { HighlightsArea, AreaTitle, AreaContent } from "./BookAppStyles";
 
 const HighlightsWrapper = styled.div`
   padding: var(--spacing-lg) var(--spacing-lg);
 `;
 
-const BookHeading = styled.div``;
+const BookHeading = styled.div`
+  margin-bottom: var(--spacing-2xl);
+`;
 
-const BookTitle = styled.h1``;
-const BookAuthors = styled.div``;
+const BookTitle = styled.h1`
+  margin: 0;
+  font-size: var(--text-xl);
+`;
+const BookAuthors = styled.div`
+  margin-top: var(--spacing-sm);
+`;
 
 const Section = styled.div`
   margin-bottom: var(--spacing-2xl);
 `;
 const SectionTitle = styled.h2`
-  margin-top: var(--spacing-md);
+  margin: 0;
+  font-size: var(--text-lg);
+  position: sticky;
+  top: 0;
+  background: var(--background-color);
+  padding: var(--spacing-md) 0;
 `;
 const HighlightsList = styled.div``;
 
 const Highlight = styled.div`
-  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
 `;
 const HighlightContent = styled.p`
   margin-bottom: 0;
@@ -33,11 +46,7 @@ const HighlightMeta = styled.div`
   }
 `;
 
-export const Highlights = ({ data }) => {
-  const [book, setBook] = useState(data);
-
-  useEffect(() => setBook(data), [data]);
-
+export const Highlights = ({ book }) => {
   const bookNotes = book.sections.map((section, i) => {
     const highlights = section.highlights.map((highlight, i) => {
       return (
@@ -61,13 +70,18 @@ export const Highlights = ({ data }) => {
   });
 
   return (
-    <HighlightsWrapper>
-      <BookHeading>
-        <BookTitle>{book.title}</BookTitle>
-        <BookAuthors>{book.authors}</BookAuthors>
-      </BookHeading>
+    <HighlightsArea>
+      <AreaTitle>Plain text</AreaTitle>
+      <AreaContent>
+        <HighlightsWrapper>
+          <BookHeading>
+            <BookTitle>{book.title}</BookTitle>
+            <BookAuthors>{book.authors}</BookAuthors>
+          </BookHeading>
 
-      <HighlightsList>{bookNotes}</HighlightsList>
-    </HighlightsWrapper>
+          <HighlightsList>{bookNotes}</HighlightsList>
+        </HighlightsWrapper>
+      </AreaContent>
+    </HighlightsArea>
   );
 };

@@ -3,16 +3,10 @@ import { Instructions } from "./Instructions";
 import { Highlights } from "./Highlights";
 import { Export } from "./Export";
 import Dropzone from "./Dropzone";
-import {
-  BookAppWrapper,
-  BooksArea,
-  ExportArea,
-  HighlightsArea,
-  AreaTitle,
-} from "./BookAppStyles";
+import { BookAppWrapper } from "./BookAppStyles";
 import { parseHighlights } from "lib/services";
 
-const emptyBook = { title: null, authors: "", sections: [] };
+const emptyBook = { title: "", authors: "", sections: [] };
 
 export const BooksApp = () => {
   const [book, setBook] = useState(emptyBook);
@@ -36,21 +30,9 @@ export const BooksApp = () => {
       disallowedFileTypeMsg="Only HTML files are allowed"
     >
       <BookAppWrapper>
-        <BooksArea>
-          <AreaTitle>Instructions</AreaTitle>
-
-          <Instructions onFile={handleFile} />
-        </BooksArea>
-
-        <HighlightsArea>
-          <AreaTitle>Highlights and Notes</AreaTitle>
-          <Highlights data={book} />
-        </HighlightsArea>
-
-        <ExportArea>
-          <AreaTitle>Plain text</AreaTitle>
-          <Export data={book} />
-        </ExportArea>
+        <Instructions onFile={handleFile} />
+        <Highlights book={book} />
+        <Export book={book} />
       </BookAppWrapper>
     </Dropzone>
   );

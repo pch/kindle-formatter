@@ -66,9 +66,9 @@ export const GlobalStyles = createGlobalStyle`
     --link-color: var(--indigo-1);
     --base-font-size: var(--text-md);
     --border-radius: 4px;
-    --border-color: var(--light-grey-2);
+    --border-color: var(--light-indigo-2);
     --box-shadow: 0 1px 5px rgba(0, 0, 0, .2);
-    --line-height: 1.5;
+    --line-height: 1.77;
 
     --button-bg: var(--light-indigo-5);
     --button-bg-hover: var(--light-indigo-4);
