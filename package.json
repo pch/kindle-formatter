@@ -1,5 +1,5 @@
 {
-  "name": "health",
+  "name": "kindle-formatter",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
@@ -9,7 +9,7 @@
   "dependencies": {
     "eslint-loader": "^4.0.2",
     "mustache": "^4.0.1",
-    "next": "^10",
+    "next": "12",
     "react": "^17",
     "react-dom": "^17",
     "react-is": "^17",
