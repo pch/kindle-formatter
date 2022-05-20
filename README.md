@@ -1,6 +1,6 @@
 # Kindle Highlights Formatter
 
-Website: https://kindle-formatter.vercel.app/
+Website: https://kindle-formatter.com/
 
 A simple tool for cleaning up Kindle highlights exported via the desktop app. The result is plain text you can paste to your note-taking app (Roam, Notion, Evernote).
 
