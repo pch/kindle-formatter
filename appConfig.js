@@ -1,7 +1,7 @@
 export const APP_CONFIG = {
-  siteTitle: "Kindle Highlights Formatter",
+  siteTitle: "Kindle Highlights Formatter: convert highlights to Markdown",
   siteDescription:
-    "Format your Kindle Highlights for export to your favorite note-taking tool.",
+    "Format your Kindle Highlights for export to your favorite note-taking tool (Notion, Obsidian, Roam).",
 };
 
 export const breakpoints = {
