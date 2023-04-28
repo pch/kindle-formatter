@@ -28,7 +28,7 @@ export const Instructions = ({ onFile }) => {
 
   return (
     <InstructionsArea>
-      <AreaTitle>Instructions</AreaTitle>
+      <AreaTitle>Instructions: How to Export Kindle Highlights</AreaTitle>
 
       <AreaContent>
         <InstructionsSection>

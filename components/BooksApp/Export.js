@@ -73,7 +73,7 @@ export const Export = ({ book, selectedPreset, templates, onPresetChange }) => {
   return (
     <ExportArea>
       <AreaTitle>
-        Plain text
+        Markdown Export
         <PresetsWrapper>Preset: {presets}</PresetsWrapper>
       </AreaTitle>
       <AreaContent>

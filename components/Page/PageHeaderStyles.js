@@ -27,9 +27,10 @@ export const Header = styled.header`
   }
 `;
 
-export const Logo = styled.div`
+export const Logo = styled.h1`
   position: relative;
   font-weight: bold;
+  font-size: var(--text-sm);
 
   svg {
     display: block;

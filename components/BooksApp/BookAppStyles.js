@@ -74,15 +74,17 @@ export const CustomPresetArea = styled(Area)`
   border-top: 1px var(--border-color) solid;
 `;
 
-export const AreaTitle = styled.div`
+export const AreaTitle = styled.h2`
   font-weight: 600;
   border-bottom: 1px var(--border-color) solid;
   text-align: left;
-  padding: var(--spacing-md) var(--spacing-lg);
+  margin: 0;
+  padding: var(--spacing-sm) var(--spacing-lg);
   background: var(--light-indigo-1);
   z-index: 100;
   display: flex;
   justify-content: space-between;
+  font-size: var(--text-sm);
 `;
 
 export const AreaContent = styled.div`
