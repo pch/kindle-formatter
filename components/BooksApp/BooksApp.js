@@ -4,7 +4,7 @@ import { Highlights } from "./Highlights";
 import { Export } from "./Export";
 import { CustomPreset } from "./CustomPreset";
 import Dropzone from "./Dropzone";
-import { BookAppWrapper } from "./BookAppStyles";
+import { BookAppWrapper, Footer } from "./BookAppStyles";
 import { parseHighlights } from "lib/parser";
 import { TEMPLATES } from "templates";
 
@@ -74,6 +74,10 @@ export const BooksApp = () => {
           onPresetUpdate={handleCustomPresetUpdate}
           onPresetReset={() => handleCustomPresetUpdate(defaultTemplate)}
         />
+        <Footer>
+          <div>made by <a href="https://ptrchm.com">ptrchm</a></div>
+          <div>see also: <a href="https://pixelpeeper.com/exif-data-viewer">exif data viewer</a></div>
+        </Footer>
       </BookAppWrapper>
     </Dropzone>
   );

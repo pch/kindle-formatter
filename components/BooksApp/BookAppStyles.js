@@ -11,7 +11,8 @@ export const BookAppWrapper = styled.div`
   display: grid;
   grid-template-areas:
     "instructions highlights export"
-    "preset highlights export";
+    "preset highlights export"
+    "footer footer footer";
 
   grid-template-columns: minmax(150px, 400px) minmax(200px, 1fr) minmax(
       300px,
@@ -25,7 +26,8 @@ export const BookAppWrapper = styled.div`
   @media ${breakpoints.breakL} {
     grid-template-areas:
       "instructions highlights"
-      "preset export ";
+      "preset export"
+      "footer footer";
 
     grid-template-columns: minmax(150px, 300px) minmax(200px, 1fr);
   }
@@ -35,7 +37,8 @@ export const BookAppWrapper = styled.div`
       "instructions"
       "highlights"
       "export"
-      "preset";
+      "preset"
+      "footer";
 
     grid-template-columns: 1fr;
 
@@ -92,4 +95,14 @@ export const AreaContent = styled.div`
   -ms-overflow-style: -ms-autohiding-scrollbar;
   position: relative;
   flex: 1;
+`;
+
+export const Footer = styled.div`
+  grid-area: footer;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-top: 1px var(--border-color) solid;
+  background: var(--light-indigo-1);
+
+  display: flex;
+  justify-content: space-between;
 `;
