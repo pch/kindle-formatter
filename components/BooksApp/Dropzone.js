@@ -7,7 +7,7 @@ const DropzoneWrapper = styled.div`
 `;
 
 const DropzoneAlert = styled.div`
-  display: ${(props) => (props.active ? "block" : "none")};
+  display: ${(props) => (props.$active ? "block" : "none")};
   background-color: rgba(52, 177, 235, 0.2);
   position: absolute;
   top: 0;
@@ -21,7 +21,7 @@ const DropzoneAlert = styled.div`
 `;
 
 const DropzoneUploadingAlert = styled.div`
-  display: ${(props) => (props.uploading ? "block" : "none")};
+  display: ${(props) => (props.$uploading ? "block" : "none")};
   background-color: rgba(202, 100, 235, 0.5);
   position: absolute;
   top: 0;
@@ -53,13 +53,11 @@ const Dropzone = ({
     if (!active) {
       setActive(true);
     }
-    console.log("dragover");
   };
 
   const handleDragLeave = (e) => {
     e.preventDefault();
     setActive(false);
-    console.log("dragleave");
   };
 
   const handleDrop = (e) => {
@@ -83,16 +81,15 @@ const Dropzone = ({
 
   return (
     <DropzoneWrapper
-      active={active}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
     >
-      <DropzoneAlert active={active}>
+      <DropzoneAlert $active={active}>
         <DropzoneAlertMessage>Drop file here</DropzoneAlertMessage>
       </DropzoneAlert>
 
-      <DropzoneUploadingAlert uploading={uploading}>
+      <DropzoneUploadingAlert $uploading={uploading}>
         <DropzoneAlertMessage>Processing file...</DropzoneAlertMessage>
       </DropzoneUploadingAlert>
 

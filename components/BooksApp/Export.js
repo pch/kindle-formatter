@@ -44,7 +44,7 @@ const PresetButton = styled.button`
   position: relative;
 
   ${(props) =>
-    props.active
+    props.$active
       ? css`
           ${activeButtonStyles}
         `
@@ -61,7 +61,7 @@ export const Export = ({ book, selectedPreset, templates, onPresetChange }) => {
   const presets = Object.keys(templates).map((tpl) => {
     return (
       <PresetButton
-        active={tpl === selectedPreset}
+        $active={tpl === selectedPreset}
         onClick={() => onPresetChange(tpl)}
         key={tpl}
       >

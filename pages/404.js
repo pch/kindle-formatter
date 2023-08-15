@@ -8,7 +8,7 @@ export default function Custom404() {
     <ApplicationLayout>
       <Head>
         <title>
-          This page doesn't exist (Error 404) | {APP_CONFIG.siteTitle}
+          {`This page doesn't exist (Error 404) | ${APP_CONFIG.siteTitle}`}
         </title>
       </Head>
       This page doesn't exist.

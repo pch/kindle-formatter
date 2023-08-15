@@ -7,7 +7,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-"use strict";
+
 
 // Inspired by https://github.com/airbnb/javascript but less opinionated.
 
@@ -27,8 +27,6 @@ const restrictedGlobals = require("confusing-browser-globals");
 
 module.exports = {
   root: true,
-
-  parser: "babel-eslint",
 
   plugins: ["import", "jsx-a11y", "react", "react-hooks"],
 
