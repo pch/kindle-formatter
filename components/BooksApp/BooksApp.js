@@ -10,7 +10,7 @@ import { TEMPLATES } from "templates";
 
 const emptyBook = { title: "", authors: "", sections: [], empty: true };
 
-const DEFAULT_PRESET = "roam";
+const DEFAULT_PRESET = "markdown";
 
 export const BooksApp = () => {
   const defaultTemplate = TEMPLATES[DEFAULT_PRESET].trim();
