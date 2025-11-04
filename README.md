@@ -8,13 +8,9 @@ A simple tool for cleaning up Kindle highlights exported via the desktop app. Th
 
 ## Run locally
 
-Using docker:
+Just open `index.html` in your browser. That's it!
 
-```
-docker-compose up
-```
-
-That's it. You should be able to access the app at http://localhost:3000
+No build process, no dependencies, no server needed.
 
 ## Privacy Note
 
