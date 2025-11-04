@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kindle Highlights Formatter: export highlights to Markdown</title>
+  <meta name="description" content="Export your Kindle Highlights to your favorite note-taking tool (Notion, Obsidian, Roam).">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <span role="img" aria-label="books icon">📚</span>
+      Kindle Highlights Formatter
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a href="https://github.com/pch/kindle-formatter">Source Code</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Dropzone Wrapper -->
+  <div class="dropzone-wrapper" id="dropzone">
+    <!-- Dropzone Alerts -->
+    <div class="dropzone-alert" id="dropzone-alert">
+      <div class="dropzone-message">Drop file here</div>
+    </div>
+    <div class="dropzone-uploading" id="dropzone-uploading">
+      <div class="dropzone-message">Processing file...</div>
+    </div>
+
+    <!-- Main App Grid -->
+    <div class="book-app-wrapper">
+      <!-- Instructions Area -->
+      <div class="area instructions-area">
+        <h2 class="area-title">Instructions: How to Export Kindle Highlights</h2>
+        <div class="area-content">
+          <div class="instructions-section">
+            <ol>
+              <li>Open Kindle Desktop</li>
+              <li>Right-click on the book you want to export, click "Go to Notebook"</li>
+              <li>Click "Export" in the right-hand upper corner</li>
+              <li>Save file to your disk</li>
+              <li>Drag the html file onto this window or use the button below.</li>
+              <li>Copy Markdown from the right column to Roam.</li>
+            </ol>
+
+            <label>
+              <input
+                id="file-input"
+                name="imagefile"
+                type="file"
+                accept="text/html"
+              />
+              <button class="btn-primary">Browse files</button>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Highlights Area -->
+      <div class="area highlights-area">
+        <h2 class="area-title">Your Highlights and Notes</h2>
+        <div class="area-content">
+          <div class="highlights-wrapper">
+            <div id="placeholder">Drop a Kindle-exported HTML file here</div>
+
+            <div class="book-heading">
+              <h1 class="book-title" id="book-title"></h1>
+              <div class="book-authors" id="book-authors"></div>
+            </div>
+
+            <div id="highlights-list"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Export Area -->
+      <div class="area export-area">
+        <h2 class="area-title">
+          Markdown Export
+          <div class="presets-wrapper">
+            Preset:
+            <button class="preset-button" data-preset="markdown" id="preset-markdown">markdown</button>
+            <button class="preset-button" data-preset="roam" id="preset-roam">roam</button>
+            <button class="preset-button" data-preset="custom" id="preset-custom">custom</button>
+          </div>
+        </h2>
+        <div class="area-content">
+          <textarea
+            class="export-textarea"
+            id="export-output"
+            readonly
+          >Exportable plain-text notes will appear in this column</textarea>
+        </div>
+      </div>
+
+      <!-- Custom Preset Area -->
+      <div class="area custom-preset-area">
+        <h2 class="area-title">Custom Preset Template</h2>
+        <div class="area-content">
+          <div class="custom-preset-section">
+            <p>
+              You can customize the output with your own template (uses
+              <a href="https://github.com/janl/mustache.js">mustache.js</a> syntax):
+            </p>
+
+            <textarea
+              id="custom-template"
+              rows="13"
+            ></textarea>
+
+            <button class="btn-primary" id="restore-default">Restore default</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div>made by <a href="https://ptrchm.com">ptrchm</a></div>
+        <div>see also: <a href="https://pixelpeeper.com/exif-data-viewer">exif data viewer</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mustache.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js"></script>
+
+  <!-- Main App Script -->
+  <script src="app.js"></script>
+</body>
+</html>
